@@ -17,7 +17,7 @@
   <script src="./main.js" type="module"></script>
 </head>
 <body>
-  
+  <!-- Nav bar header -->
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#">Login app</a>
@@ -26,11 +26,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signinModal" >Signin</a>
+          <li class="nav-item logged-out">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Signin</a>
+          </li>
+          <li class="nav-item logged-out">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal" >Signup</a>
+            <a class="nav-link logged-in" href="#" id="logout">Logout</a>
           </li>
         </ul>
       </div>
@@ -46,12 +49,12 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="login-form">
+          <form id="signin-form">
             <label for="email">Email:</label>
-            <input type="email" class="form-control mb-3" placeholder="Email" required>
+            <input type="email" id="signin-email" class="form-control mb-3" placeholder="Email" required>
 
             <label for="password">Password:</label>
-            <input type="password" class="form-control mb-3" placeholder="Password" required>
+            <input type="password" id="signin-password" class="form-control mb-3" placeholder="Password" required>
 
             <button type="submit" class="btn btn-primary">
               Login
