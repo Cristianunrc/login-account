@@ -3,7 +3,7 @@ const loggedInLink = document.querySelectorAll('.logged-in')
 
 export const loginCheck = (user) => {
   if (user) {
-    // Disable signin and signup, enable signout
+    // Disable signin and signup, enable logout
     loggedInOut('block', 'none')
   } else {
     // Disable logout, enable signin and signup

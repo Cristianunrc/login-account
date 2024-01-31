@@ -23,3 +23,9 @@ export function closeModal(id) {
   const modal = bootstrap.Modal.getInstance(signinUp)
   modal.hide()
 }
+
+
+export function wellcomeMessage(credential) {
+  const wellcome = "Wellcome " + credential
+  showMessage(wellcome)
+}
