@@ -4,7 +4,8 @@ import { auth } from './firebase.js'
 
 const googleButton = document.querySelector('#googleLogin')
 
-googleButton.addEventListener('click', async () => {
+googleButton.addEventListener('click', async (e) => {
+  e.preventDefault()
   try {
     const provider = new GoogleAuthProvider()
     const userCredential = await signInWithPopup(auth, provider)
@@ -12,6 +13,8 @@ googleButton.addEventListener('click', async () => {
     wellcomeMessage(userCredential.user.displayName)
 
   } catch (error) {
-    console.log(error.message)
+    if (error.code === 'auth/account-exists-with-different-credential') {
+      console.log(error.email)
+    }
   }
 })
