@@ -2,7 +2,6 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 import { showMessage, closeModal, wellcomeMessage } from './exportsFunctions.js'
 import { auth } from './firebase.js'
 
-
 const signupForm = document.querySelector('#signup-form')
 
 signupForm.addEventListener('submit', async (e) => {
@@ -11,11 +10,15 @@ signupForm.addEventListener('submit', async (e) => {
   const password = signupForm['signup-password'].value
 
   try {
+    if (!email || !password) {
+      throw new Error('Email or password cannot be empty.')
+    }
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
     closeModal('#signupModal')
     wellcomeMessage(userCredential.user.email)
   } catch (error) {
-    signupError(error.code) 
+    signupError(error.code)
+    console.log(error.message) 
   }
 })
 
@@ -27,7 +30,7 @@ function signupError(errorCode) {
     showMessage("Password should be at least 6 characters", "error")
   } else if (errorCode === 'auth/invalid-email') {
     showMessage("Invalid email", "error")
-  } else if (errorCode) {
+  } else {
     showMessage("Something went wrong", "error")
   }
 }

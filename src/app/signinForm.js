@@ -10,11 +10,15 @@ signinForm.addEventListener('submit', async (e) => {
   const password = signinForm['signin-password'].value
   
   try {
+    if (!email || !password) {
+      throw new Error('Email or password cannot be empty.')
+    }
     const userCredential = await signInWithEmailAndPassword(auth, email, password)  
     closeModal('#signinModal')
     wellcomeMessage(userCredential.user.email)
-  } catch (error) {    
+  } catch (error) {
     signinError(error.code)
+    console.log(error.message)
   }
 })
 
@@ -22,7 +26,7 @@ signinForm.addEventListener('submit', async (e) => {
 function signinError(errorCode) {
   if (errorCode === 'auth/invalid-credential') {
     showMessage("Invalid email or password", "error")
-  } else if (errorCode) {
+  } else {
     showMessage("Something went wrong", "error")
   }
 }

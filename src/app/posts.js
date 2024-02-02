@@ -6,11 +6,10 @@ const postForm = document.querySelector('#post-form')
 
 postForm.addEventListener('submit', async (e) => {
   e.preventDefault()
+  const title = postForm['post-title'].value
+  const content = postForm['post-text'].value
 
   try {
-    const title = postForm['post-title'].value
-    const content = postForm['post-text'].value
-    
     if (!title || !content) {
       throw new Error('Title or content inputs cannot be empty')
     }
@@ -23,10 +22,10 @@ postForm.addEventListener('submit', async (e) => {
 
     closeModal('#postModal')
     window.location.replace('/src/index.html')
-
   } catch (error) {
-   if (error.message) {
+   if (error.code || error.message) {
     showMessage("Something went wrong", "error")
    }
+   console.log(error.message)
   }
 })

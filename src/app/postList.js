@@ -11,10 +11,12 @@ export const setupPosts = (data) => {
     data.forEach(doc => {
       const post = doc.data()
       const li = `
-        <li class="list-group-item flex justify-content-between list-group-item-action text-dark">
-          <h5>${post.title}</h5>
-          <p>${post.content}</p>
-        </li>
+        <div class="card text-dark mb-3">
+          <h5 class="card-header text-center fw-bold fs-4">${post.title}</h5>
+          <div class="card-body">
+            <p class="card-text">${post.content}</p>
+          </div>
+        </div>  
       `
       html += li
     })
