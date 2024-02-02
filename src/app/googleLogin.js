@@ -14,7 +14,9 @@ googleButton.addEventListener('click', async (e) => {
 
   } catch (error) {
     if (error.code === 'auth/account-exists-with-different-credential') {
-      console.log(error.email)
+      showMessage("Exists accounts with different credentials", "error")
+    } else if (error.code) {
+      showMessage("Something went wrong", "error")
     }
   }
 })

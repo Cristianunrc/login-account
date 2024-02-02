@@ -2,7 +2,6 @@ import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/1
 import { showMessage, closeModal, wellcomeMessage } from './exportsFunctions.js'
 import { auth } from './firebase.js'
 
-
 const signinForm = document.querySelector('#signin-form')
 
 signinForm.addEventListener('submit', async (e) => {
