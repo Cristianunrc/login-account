@@ -1,7 +1,7 @@
 const postList = document.querySelector('.posts')
 
-export const setupPosts = (data) => {
-  if (data.length) {
+export const setupPosts = (data, user) => {
+  if (data.length && user) {
     // Order the docs by timestamp
     data.sort((a, b) => b.data().timestamp - a.data().timestamp)
     
@@ -21,7 +21,28 @@ export const setupPosts = (data) => {
       html += li
     })
     postList.innerHTML = html
+  } else if (!data.length && user){
+    postList.innerHTML = '<h1 class="text-white text-center">There is no post yet!</h1>'
   } else {
-    postList.innerHTML = '<h1 class="text-white text-center">Login to see the posts</h1>'
+    const scriptPath = import.meta.url
+    const image = scriptPath.replace('postList.js', '../public/images/imagePost.png')
+
+    postList.innerHTML = `<style>
+                            @font-face {
+                              font-family: 'MyFont';
+                              src: url('/public/fonts/PTSerif-Regular.ttf') format('truetype');
+                            }
+                            .custom-h1 {
+                              font-size: 3.5rem;
+                              font-family: 'MyFont';
+                            }
+                          </style>
+
+                          <div class="container flex justify-content-center">
+                            <img src="${image}" class="flex justify-content-center" alt="Responsive Image">
+                            <h1 class="mt-5 text-white custom-h1 text-nowrap">Welcome to the Posts</h1>
+                            <p class="mt-4 fs-2">Login to add and see the posts.</p> 
+                          </div>`
   }
+
 }
