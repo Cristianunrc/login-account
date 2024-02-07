@@ -13,18 +13,24 @@
   <!-- Font awesome -->
   <script src="https://kit.fontawesome.com/8a2a68e2d5.js" crossorigin="anonymous"></script>
   
+  <!-- Favicon -->
+  <link rel="icon" href="./public/images/note.ico" type="image/x-icon">
+  
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./public/css/main.css">
   
   <!-- Main -->
   <script src="./main.js" type="module"></script>
 </head>
+
 <body>
 
   <!-- Nav bar header -->
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="/src/index.html">Home</i></a>
+      <a class="navbar-brand" href="/src/index.html">
+        <i class="fa-solid fa-house-chimney"></i>
+      </a>
       <button 
         class="navbar-toggler"
         type="button"
@@ -40,7 +46,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item logged-out">
             <button
-              class="btn btn-success me-2 mb-2 mt-2"
+              class="btn btn-success me-4 mb-2 mt-2"
               type="button"
               data-bs-toggle="modal"
               data-bs-target="#signinModal"
@@ -50,7 +56,7 @@
           </li>
           <li class="nav-item logged-out">
             <button
-              class="btn btn-success me-2 mb-2 mt-2"
+              class="btn btn-success me-4 mb-2 mt-2"
               type="button"
               data-bs-toggle="modal"
               data-bs-target="#signupModal"
@@ -60,7 +66,7 @@
           </li>
           <li class="nav-item logged-in">
             <button
-              class="btn btn-danger me-2 mb-2 mt-2"
+              class="btn btn-danger me-4 mb-2 mt-2"
               type="button"
               id="logout"
             >
@@ -69,7 +75,7 @@
           </li>
           <li class="nav-item logged-in">
             <button
-              class="btn btn-info me-2 mb-2 mt-2"
+              class="btn btn-info mb-2 mt-2"
               type="button" 
               data-bs-toggle="modal" 
               data-bs-target="#postModal"
@@ -92,7 +98,7 @@
   </div>
 
   <!-- Signin Modal -->
-  <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="signinModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content bg-dark">
         <div class="modal-header">
@@ -129,7 +135,7 @@
   </div>
 
   <!-- Signup Modal -->
-  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content bg-dark">
         <div class="modal-header">
@@ -154,7 +160,7 @@
   </div>
 
   <!-- Posts Modal -->
-  <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="postModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content bg-dark">
         <div class="modal-header">
@@ -170,7 +176,7 @@
             <textarea id="post-text" class="form-control mb-3 text-dark" placeholder="Write a text" rows="4" required></textarea>
 
             <button type="submit" class="btn btn-primary">
-              Post
+              <i class="fa-solid fa-share"></i> Post
             </button>
           </form>
         </div>

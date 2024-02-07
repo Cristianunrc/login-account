@@ -11,7 +11,7 @@ googleButton.addEventListener('click', async (e) => {
     const userCredential = await signInWithPopup(auth, provider)
     closeModal('#signinModal')
     wellcomeMessage(userCredential.user.displayName)
-
+    // userCredential.user.photoURL
   } catch (error) {
     if (error.code === 'auth/account-exists-with-different-credential') {
       showMessage("Exists accounts with different credentials", "error")

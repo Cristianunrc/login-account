@@ -16,7 +16,7 @@ export const setupPosts = (data, user) => {
           <div class="card-body">
             <p class="card-text">${post.content}</p>
           </div>
-        </div>  
+        </div>
       `
       html += li
     })
@@ -44,5 +44,4 @@ export const setupPosts = (data, user) => {
                             <p class="mt-4 fs-2">Login to add and see the posts.</p> 
                           </div>`
   }
-
 }

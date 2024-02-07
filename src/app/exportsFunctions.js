@@ -14,7 +14,7 @@ export function showMessage(msg, type = "success") {
       background: type === "success" ? "green" : "red",
     },
     onClick: function(){} // Callback after click
-  }).showToast(); 
+  }).showToast();
 }
 
 // Close signin or signup modal
@@ -25,7 +25,7 @@ export function closeModal(id) {
 }
 
 
-export function wellcomeMessage(credential) {
-  const wellcome = "Wellcome " + credential
+export function wellcomeMessage(credentialName) {
+  const wellcome = `Wellcome ${credentialName}`
   showMessage(wellcome)
 }
