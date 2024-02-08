@@ -9,7 +9,6 @@ githubButton.addEventListener('click', async (e) => {
   try {
     const provider = new GithubAuthProvider()
     const userCredential = await signInWithPopup(auth, provider)
-    console.log(userCredential)
     closeModal('#signinModal')
     wellcomeMessage(userCredential.user.displayName)
   } catch (error) {

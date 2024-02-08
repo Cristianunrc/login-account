@@ -11,13 +11,13 @@ export const setupPosts = (data, user) => {
     data.forEach(doc => {
       const post = doc.data()
       const li = `
-        <div class="card text-dark mb-3">
-          <h5 class="card-header text-center fw-bold fs-4">${post.title}</h5>
-          <div class="card-body">
-            <p class="card-text">${post.content}</p>
-          </div>
-        </div>
-      `
+                  <div class="card text-dark mb-3">
+                    <h5 class="card-header text-center fw-bold fs-3 text-primary">${post.title}</h5>
+                    <div class="card-body">
+                      <p class="card-text fs-5">${post.content}</p>
+                    </div>
+                  </div>
+                `
       html += li
     })
     postList.innerHTML = html
@@ -27,21 +27,22 @@ export const setupPosts = (data, user) => {
     const scriptPath = import.meta.url
     const image = scriptPath.replace('postList.js', '../public/images/imagePost.png')
 
-    postList.innerHTML = `<style>
+    postList.innerHTML = `
+                          <style>
                             @font-face {
-                              font-family: 'MyFont';
-                              src: url('/public/fonts/PTSerif-Regular.ttf') format('truetype');
+                              font-family: 'PTSerif-Regular';
+                              src: url('./public/fonts/PTSerif-Regular.ttf') format('truetype');
                             }
                             .custom-h1 {
                               font-size: 3.5rem;
-                              font-family: 'MyFont';
+                              font-family: 'PTSerif-Regular';
                             }
                           </style>
-
                           <div class="container flex justify-content-center">
                             <img src="${image}" class="flex justify-content-center" alt="Responsive Image">
                             <h1 class="mt-5 text-white custom-h1 text-nowrap">Welcome to the Posts</h1>
                             <p class="mt-4 fs-2">Login to add and see the posts.</p> 
-                          </div>`
+                          </div>  
+                        `
   }
 }

@@ -11,7 +11,7 @@ signinForm.addEventListener('submit', async (e) => {
   
   try {
     inputsEmpty(email, password)
-    const userCredential = await signInWithEmailAndPassword(auth, email, password)  
+    const userCredential = await signInWithEmailAndPassword(auth, email, password)
     closeModal('#signinModal')
     wellcomeMessage(userCredential.user.email)
   } catch (error) {

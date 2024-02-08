@@ -9,7 +9,6 @@ fbButton.addEventListener('click', async (e) => {
   try {
     const provider = new FacebookAuthProvider()
     const userCredential = await signInWithPopup(auth, provider)
-    console.log(userCredential)
     closeModal('#signinModal')
     wellcomeMessage(userCredential.user.displayName)
   } catch (error) {
