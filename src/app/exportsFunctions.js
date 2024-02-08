@@ -35,3 +35,15 @@ export function inputsEmpty(email, password) {
     throw new Error('Email or password cannot be empty.')
   }
 }
+
+// Handling errors
+export function handleError(error) {
+  if (error.code === 'auth/account-exists-with-different-credential') {
+    showMessage("Exists accounts with different credentials", "error")
+  } else if (error.code === 'auth/invalid-credential') {
+    showMessage("Invalid username or password", "error")
+  } else if (error.code) {
+    showMessage("Something went wrong", "error")
+  }
+  console.log(error.message)
+}

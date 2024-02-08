@@ -1,5 +1,5 @@
 import { FacebookAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"
-import { closeModal, showMessage, wellcomeMessage } from './exportsFunctions.js'
+import { closeModal, wellcomeMessage, handleError } from './exportsFunctions.js'
 import { auth } from './firebase.js'
 
 const fbButton = document.querySelector('#fbLogin')
@@ -13,9 +13,6 @@ fbButton.addEventListener('click', async (e) => {
     closeModal('#signinModal')
     wellcomeMessage(userCredential.user.displayName)
   } catch (error) {
-    // if (error.code === 'auth/account-exists-with-different-credential') {
-    //   var pendingCred = error.credential
-    //   var email = error.email
-    console.log(error.message)
+    handleError(error)
   }
 })
