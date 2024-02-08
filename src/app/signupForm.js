@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"
-import { showMessage, closeModal, wellcomeMessage } from './exportsFunctions.js'
+import { showMessage, closeModal, wellcomeMessage, inputsEmpty } from './exportsFunctions.js'
 import { auth } from './firebase.js'
 
 const signupForm = document.querySelector('#signup-form')
@@ -10,9 +10,7 @@ signupForm.addEventListener('submit', async (e) => {
   const password = signupForm['signup-password'].value
 
   try {
-    if (!email || !password) {
-      throw new Error('Email or password cannot be empty.')
-    }
+    inputsEmpty(email, password)
     const userCredential = await createUserWithEmailAndPassword(auth, email, password)
     closeModal('#signupModal')
     wellcomeMessage(userCredential.user.email)

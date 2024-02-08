@@ -24,8 +24,14 @@ export function closeModal(id) {
   modal.hide()
 }
 
-
 export function wellcomeMessage(credentialName) {
   const wellcome = `Wellcome ${credentialName}`
   showMessage(wellcome)
+}
+
+// Throw an exception if email or password are empty
+export function inputsEmpty(email, password) {
+  if (!email || !password) {
+    throw new Error('Email or password cannot be empty.')
+  }
 }

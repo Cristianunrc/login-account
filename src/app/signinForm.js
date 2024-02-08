@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"
-import { showMessage, closeModal, wellcomeMessage } from './exportsFunctions.js'
+import { showMessage, closeModal, wellcomeMessage, inputsEmpty } from './exportsFunctions.js'
 import { auth } from './firebase.js'
 
 const signinForm = document.querySelector('#signin-form')
@@ -10,9 +10,7 @@ signinForm.addEventListener('submit', async (e) => {
   const password = signinForm['signin-password'].value
   
   try {
-    if (!email || !password) {
-      throw new Error('Email or password cannot be empty.')
-    }
+    inputsEmpty(email, password)
     const userCredential = await signInWithEmailAndPassword(auth, email, password)  
     closeModal('#signinModal')
     wellcomeMessage(userCredential.user.email)

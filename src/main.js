@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js"
-import { loginCheck } from './app/loginCheck.js'
-import { auth, db } from './app/firebase.js'
 import { getDocs, collection } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"
+import { auth, db } from './app/firebase.js'
+import { loginCheck } from './app/loginCheck.js'
 import { setupPosts } from './app/postList.js'
 
 import './app/signupForm.js'
