@@ -11,10 +11,16 @@ export const setupPosts = (data, user) => {
     data.forEach(doc => {
       const post = doc.data()
       const li = `
-                  <div class="card text-dark mb-3">
-                    <h5 class="card-header text-center fw-bold fs-3 text-primary">${post.title}</h5>
+                  <div class="card text-dark text-center mb-3">
+                    <div class="card-header fw-semibold fs-4">
+                      ${post.username}
+                    </div>  
                     <div class="card-body">
+                      <h5 class="card-title fw-bold fs-3 text-primary">${post.title}</h5>
                       <p class="card-text fs-5">${post.content}</p>
+                    </div>
+                    <div class="card-footer">
+                      ${post.timestamp.toDate().toLocaleString()}
                     </div>
                   </div>
                 `
