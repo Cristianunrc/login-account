@@ -36,7 +36,7 @@ postForm.addEventListener('submit', async (e) => {
     window.location.reload()
   } catch (error) {
    if (error.code || error.message) {
-    showMessage("Something went wrong", "error")
+    showMessage("Algo no esta bien", "error")
    }
    console.log(error.message)
   }

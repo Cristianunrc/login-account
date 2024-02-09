@@ -23,12 +23,12 @@ signupForm.addEventListener('submit', async (e) => {
 // Handling errors of signup
 function signupError(errorCode) {
   if (errorCode === 'auth/email-already-in-use') {
-    showMessage("Email already in use", "error")
+    showMessage("El email ya esta en uso, prueba con otro", "error")
   } else if (errorCode === 'auth/weak-password') {
-    showMessage("Password should be at least 6 characters", "error")
+    showMessage("La contraseña debe ser de al menos 6 caracteres", "error")
   } else if (errorCode === 'auth/invalid-email') {
-    showMessage("Invalid email", "error")
+    showMessage("Email inválido", "error")
   } else {
-    showMessage("Something went wrong", "error")
+    showMessage("Algo no esta bien", "error")
   }
 }

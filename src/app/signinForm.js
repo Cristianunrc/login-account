@@ -23,8 +23,8 @@ signinForm.addEventListener('submit', async (e) => {
 // Handling errors of signin
 function signinError(errorCode) {
   if (errorCode === 'auth/invalid-credential') {
-    showMessage("Invalid email or password", "error")
+    showMessage("Email o contraseña inválidos", "error")
   } else {
-    showMessage("Something went wrong", "error")
+    showMessage("Algo no esta bien", "error")
   }
 }

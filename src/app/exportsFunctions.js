@@ -3,7 +3,7 @@
 export function showMessage(msg, type = "success") {
   Toastify({
     text: msg,
-    duration: 4000,
+    duration: type === "success" ? 4000 : 5000,
     destination: "https://github.com/apvarun/toastify-js",
     newWindow: true,
     close: true,
@@ -25,7 +25,7 @@ export function closeModal(id) {
 }
 
 export function wellcomeMessage(credentialName) {
-  const wellcome = `Wellcome ${credentialName}`
+  const wellcome = `Hola ${credentialName}`
   showMessage(wellcome)
 }
 
@@ -39,11 +39,11 @@ export function inputsEmpty(email, password) {
 // Handling errors
 export function handleError(error) {
   if (error.code === 'auth/account-exists-with-different-credential') {
-    showMessage("Exists accounts with different credentials", "error")
+    showMessage("Existen cuentas con diferentes credenciales", "error")
   } else if (error.code === 'auth/invalid-credential') {
-    showMessage("Invalid username or password", "error")
+    showMessage("Nombre de usuario o contraseña inválidos", "error")
   } else if (error.code) {
-    showMessage("Something went wrong", "error")
+    showMessage("Algo no esta bien", "error")
   }
   console.log(error.message)
 }

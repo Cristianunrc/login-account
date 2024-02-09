@@ -28,7 +28,7 @@ export const setupPosts = (data, user) => {
     })
     postList.innerHTML = html
   } else if (!data.length && user){
-    postList.innerHTML = '<h1 class="text-white text-center">There is no post yet!</h1>'
+    postList.innerHTML = '<h1 class="text-white text-center">No hay posteos aún!</h1>'
   } else {
     const scriptPath = import.meta.url
     const image = scriptPath.replace('postList.js', '../public/images/imagePost.png')
@@ -46,8 +46,8 @@ export const setupPosts = (data, user) => {
                           </style>
                           <div class="container flex justify-content-center">
                             <img src="${image}" class="flex justify-content-center" alt="Responsive Image">
-                            <h1 class="mt-5 text-white custom-h1 text-nowrap">Welcome to the Posts</h1>
-                            <p class="mt-4 fs-2">Login to add and see the posts.</p> 
+                            <h1 class="mt-5 text-white custom-h1 text-nowrap">¡Te damos la bienvenida!</h1>
+                            <p class="mt-4 fs-2">Registrate o inicia sesión para comenzar</p> 
                           </div>  
                         `
   }

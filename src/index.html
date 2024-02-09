@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posts</title>
+  <title>Posteos</title>
   <!-- Bootstrap/Bootswatch -->
   <link rel="stylesheet" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
   
@@ -51,7 +51,7 @@
               data-bs-toggle="modal"
               data-bs-target="#signinModal"
             >
-              Sign in
+              Iniciar sesión
             </button>
           </li>
           <li class="nav-item logged-out">
@@ -61,7 +61,7 @@
               data-bs-toggle="modal"
               data-bs-target="#signupModal"
             >
-              Sign up
+              Registrarse
             </button>
           </li>
           <li class="nav-item logged-in">
@@ -70,7 +70,7 @@
               type="button"
               id="logout"
             >
-              Logout <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Salir <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </button>
           </li>
           <li class="nav-item logged-in">
@@ -80,7 +80,7 @@
               data-bs-toggle="modal" 
               data-bs-target="#postModal"
             >
-              Make a post <i class="fa-regular fa-note-sticky"></i>
+              Postear <i class="fa-regular fa-note-sticky"></i>
             </button>
           </li>
         </ul>
@@ -102,7 +102,7 @@
     <div class="modal-dialog">
       <div class="modal-content bg-dark">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-white">Sign in</h1>
+          <h1 class="modal-title fs-5 text-white">Inicia sesión</h1>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -110,23 +110,23 @@
             <label for="email">Email:</label>
             <input type="email" id="signin-email" class="form-control mb-3 text-dark" placeholder="Email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="signin-password" class="form-control mb-3 text-dark" placeholder="Password" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="signin-password" class="form-control mb-3 text-dark" placeholder="Contraseña" required>
 
-            <button type="submit" class="btn btn-primary me-2">
-              Login
+            <button type="submit" class="btn btn-primary w-100 mb-3">
+              Iniciar sesión con email
             </button>
 
-            <button type="button" id="googleLogin" class="btn btn-info me-2">
-              <i class="fa-brands fa-google"></i> Google
+            <button type="button" id="googleLogin" class="btn btn-info w-100 mb-3">
+              <i class="fa-brands fa-google"></i> continuar con Google
             </button>
 
-            <button type="button" id="fbLogin" class="btn btn-primary me-2">
-              <i class="fa-brands fa-facebook"></i> Facebook
+            <button type="button" id="fbLogin" class="btn btn-primary w-100 mb-3">
+              <i class="fa-brands fa-facebook"></i> continuar con Facebook
             </button>
   
-            <button type="button" id="githubLogin" class="btn btn-light">
-              <i class="fa-brands fa-github"></i> Github
+            <button type="button" id="githubLogin" class="btn btn-light w-100">
+              <i class="fa-brands fa-github"></i> continuar con Github
             </button>
           </form>
         </div>
@@ -139,7 +139,7 @@
     <div class="modal-dialog">
       <div class="modal-content bg-dark">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-white">Sign up</h1>
+          <h1 class="modal-title fs-5 text-white">Registrar</h1>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -147,11 +147,11 @@
             <label for="email">Email:</label>
             <input type="email" id="signup-email" class="form-control mb-3 text-dark" placeholder="Email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="signup-password" class="form-control mb-3 text-dark" placeholder="Password" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="signup-password" class="form-control mb-3 text-dark" placeholder="Contraseña" required>
 
-            <button type="submit" class="btn btn-primary">
-              Register
+            <button type="submit" class="btn btn-primary w-100">
+              Registrarse
             </button>
           </form>
         </div>
@@ -164,19 +164,19 @@
     <div class="modal-dialog">
       <div class="modal-content bg-dark">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-white">Post</h1>
+          <h1 class="modal-title fs-5 text-white">Posteo</h1>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form id="post-form">
-            <label for="text">Title:</label>
-            <input type="text" id="post-title" class="form-control mb-3 text-dark" placeholder="Write a title" required>
+            <label for="text">Título:</label>
+            <input type="text" id="post-title" class="form-control mb-3 text-dark" placeholder="Escribe un título" required>
 
-            <label for="text">Text:</label>
-            <textarea id="post-text" class="form-control mb-3 text-dark" placeholder="Write a text" rows="4" required></textarea>
+            <label for="text">Descripción:</label>
+            <textarea id="post-text" class="form-control mb-3 text-dark" placeholder="Escribe una descripción" rows="4" required></textarea>
 
             <button type="submit" class="btn btn-primary">
-              <i class="fa-solid fa-share"></i> Post
+              <i class="fa-solid fa-share"></i> Postear
             </button>
           </form>
         </div>
