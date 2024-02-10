@@ -28,9 +28,14 @@
   <!-- Nav bar header -->
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="/src/index.html">
+      <a class="navbar-brand" href="#" onclick="reloadPage()">
         <i class="fa-solid fa-house-chimney"></i>
       </a>
+      <script>
+        function reloadPage() {
+          location.reload();
+        }
+      </script>
       <button 
         class="navbar-toggler"
         type="button"
@@ -70,7 +75,7 @@
               type="button"
               id="logout"
             >
-              Salir <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Salir <i class="fa-solid fa-arrow-right-from-bracket ms-2"></i>
             </button>
           </li>
           <li class="nav-item logged-in">
@@ -80,7 +85,7 @@
               data-bs-toggle="modal" 
               data-bs-target="#postModal"
             >
-              Postear <i class="fa-regular fa-note-sticky"></i>
+              Postear <i class="fa-regular fa-note-sticky ms-2"></i>
             </button>
           </li>
         </ul>
@@ -114,19 +119,19 @@
             <input type="password" id="signin-password" class="form-control mb-3 text-dark" placeholder="Contraseña" required>
 
             <button type="submit" class="btn btn-primary w-100 mb-3">
-              Iniciar sesión con email
+              <i class="fa-regular fa-envelope me-3"></i> Iniciar sesión con email
             </button>
 
             <button type="button" id="googleLogin" class="btn btn-info w-100 mb-3">
-              <i class="fa-brands fa-google"></i> continuar con Google
+              <i class="fa-brands fa-google me-3"></i> Continuar con Google
             </button>
 
             <button type="button" id="fbLogin" class="btn btn-primary w-100 mb-3">
-              <i class="fa-brands fa-facebook"></i> continuar con Facebook
+              <i class="fa-brands fa-facebook me-3"></i> Continuar con Facebook
             </button>
-  
+
             <button type="button" id="githubLogin" class="btn btn-light w-100">
-              <i class="fa-brands fa-github"></i> continuar con Github
+              <i class="fa-brands fa-github me-3"></i> Continuar con Github
             </button>
           </form>
         </div>
@@ -175,8 +180,8 @@
             <label for="text">Descripción:</label>
             <textarea id="post-text" class="form-control mb-3 text-dark" placeholder="Escribe una descripción" rows="4" required></textarea>
 
-            <button type="submit" class="btn btn-primary">
-              <i class="fa-solid fa-share"></i> Postear
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="fa-solid fa-share me-2"></i> Postear
             </button>
           </form>
         </div>

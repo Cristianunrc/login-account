@@ -1,1 +1,6 @@
+# Firebase config
 firebase.js
+
+# Firebase cache
+.firebase/
+

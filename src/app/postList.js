@@ -34,21 +34,31 @@ export const setupPosts = (data, user) => {
     const image = scriptPath.replace('postList.js', '../public/images/imagePost.png')
 
     postList.innerHTML = `
-                          <style>
-                            @font-face {
-                              font-family: 'PTSerif-Regular';
-                              src: url('./public/fonts/PTSerif-Regular.ttf') format('truetype');
-                            }
-                            .custom-h1 {
-                              font-size: 3.5rem;
-                              font-family: 'PTSerif-Regular';
-                            }
-                          </style>
-                          <div class="container flex justify-content-center">
-                            <img src="${image}" class="flex justify-content-center" alt="Responsive Image">
-                            <h1 class="mt-5 text-white custom-h1 text-nowrap">¡Te damos la bienvenida!</h1>
-                            <p class="mt-4 fs-2">Registrate o inicia sesión para comenzar</p> 
-                          </div>  
-                        `
+      <style>
+        @font-face {
+          font-family: 'PTSerif-Regular';
+          src: url('./public/fonts/PTSerif-Regular.ttf') format('truetype');
+        }
+        .custom-h1 {
+          font-size: 2.5rem;
+          font-family: 'PTSerif-Regular';
+        }
+        .flex img {
+          max-width: 60%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+      </style>
+      <div class="container flex justify-content-center text-center">
+        <img src="${image}" class="flex justify-content-center" alt="Responsive Image">
+        <h1 class="mt-5 text-white custom-h1">¡Te damos la bienvenida!</h1>
+        <p class="mt-4 fs-4">Registrate o inicia sesión para comenzar</p> 
+      </div>
+    `
   }
 }
